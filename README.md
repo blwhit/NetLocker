@@ -14,6 +14,49 @@ Useful for malware analysis and minimizing unwanted connections to/from your per
 - **Windows Integration** - Management via tray icon, alerts via system notifications
 - **Malware Analysis** - Monitoring pauses when FakeNet.exe is detected
 
+## 🔍 Network Blocking 
+
+When an exposed IP is detected in Full Protection mode:
+
+<br>
+
+<img width="600" height="411" alt="image" src="https://github.com/user-attachments/assets/5c193c65-0e8c-4188-ab6b-4c9656fc38fc" />
+
+<img width="358" height="129" alt="image" src="https://github.com/user-attachments/assets/fcbde657-6a8a-402d-8fe8-d39847556914" />
+
+## 🛠️ Usage
+
+### System Tray Menu
+Right-click the NetLocker system tray icon:
+
+<br>
+
+<img width="300" height="275" alt="image" src="https://github.com/user-attachments/assets/08128888-16ac-4831-bb57-3ff7e35a4e06" />
+
+
+### Command Line Options
+```bash
+NetLocker.exe [options]
+
+Options:
+  --mode {full,monitor,silent}  Protection mode (default: full)
+  --config CONFIG              Custom config file path
+  --interval SECONDS           Check interval (default: 30)
+  --no-tray                    Disable system tray icon
+```
+
+### CLI Menu Commands (--no-tray)
+```
+netlocker> status    # Show current status
+netlocker> full      # Switch to full protection
+netlocker> monitor   # Switch to monitor only
+netlocker> silent    # Switch to silent mode
+netlocker> pause     # Pause/resume monitoring
+netlocker> unblock   # Force unblock network
+netlocker> config    # Open config file
+netlocker> quit      # Exit
+```
+
 ## 🔧 Installation & Setup
 
 ### Option 1: Run Executable (Recommended)
@@ -71,52 +114,6 @@ $trigger = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
 $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -RestartCount 5 -RestartInterval (New-TimeSpan -Minutes 1) -StartWhenAvailable
 Register-ScheduledTask -TaskName "NetLocker" -Action $action -Trigger $trigger -Settings $settings -RunLevel Highest -Description "Run NetLocker at login with admin privileges"
 ```
-
-## 🛠️ Usage
-
-### System Tray Menu
-Right-click the NetLocker system tray icon:
-
-<br>
-
-<img width="300" height="275" alt="image" src="https://github.com/user-attachments/assets/08128888-16ac-4831-bb57-3ff7e35a4e06" />
-
-
-### Command Line Options
-```bash
-NetLocker.exe [options]
-
-Options:
-  --mode {full,monitor,silent}  Protection mode (default: full)
-  --config CONFIG              Custom config file path
-  --interval SECONDS           Check interval (default: 30)
-  --no-tray                    Disable system tray icon
-```
-
-### CLI Menu Commands (--no-tray)
-```
-netlocker> status    # Show current status
-netlocker> full      # Switch to full protection
-netlocker> monitor   # Switch to monitor only
-netlocker> silent    # Switch to silent mode
-netlocker> pause     # Pause/resume monitoring
-netlocker> unblock   # Force unblock network
-netlocker> config    # Open config file
-netlocker> quit      # Exit
-```
-
-## 🔍 Network Blocking 
-
-When an exposed IP is detected in Full Protection mode:
-
-<br>
-
-<img width="600" height="411" alt="image" src="https://github.com/user-attachments/assets/5c193c65-0e8c-4188-ab6b-4c9656fc38fc" />
-
-<img width="358" height="129" alt="image" src="https://github.com/user-attachments/assets/fcbde657-6a8a-402d-8fe8-d39847556914" />
-
-
-
 
 ## 📋 Notice 
 
