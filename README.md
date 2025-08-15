@@ -99,7 +99,7 @@ Create or edit `config.json` in the **same** directory as NetLocker:
 
 ## 🏃 Run Automatically (Recommended)
 
-To run NetLocker in the background at login (via Scheduled Task):
+To run NetLocker in the _background at login _(via Scheduled Task):
 
 ```powershell
 # Navigate to NetLocker directory
@@ -109,10 +109,12 @@ cd NetLocker
 $currentDir = Get-Location
 $exePath = Join-Path $currentDir "NetLocker.exe"
 $configPath = Join-Path $currentDir "config.json"
-$action = New-ScheduledTaskAction -Execute $exePath -Argument "--config `"$configPath`""
+$psCommand = "Start-Process -FilePath `"$exePath`" -ArgumentList '--config `"$configPath`"' -WindowStyle Hidden"
+$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -WindowStyle Hidden -Command $psCommand"
 $trigger = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
 $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -RestartCount 5 -RestartInterval (New-TimeSpan -Minutes 1) -StartWhenAvailable
-Register-ScheduledTask -TaskName "NetLocker" -Action $action -Trigger $trigger -Settings $settings -RunLevel Highest -Description "Run NetLocker at login with admin privileges"
+Register-ScheduledTask -TaskName "NetLocker" -Action $action -Trigger $trigger -Settings $settings -RunLevel Highest -Description "Run NetLocker at login with admin privileges, hidden window"
+
 ```
 
 ## 📋 Notice 
