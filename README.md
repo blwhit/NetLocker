@@ -12,7 +12,7 @@ Automatically disable network interfaces when your VPN is off or your personal I
 - **IP Monitoring** - Continuously checks your public IP on intervals
 - **Explicit IP Control** - Set explicitly approved or blocked IPs and subnets via config file
 - **Windows Integration** - Management via tray icon, alerts via system notifications
-- **Malware Analysis** - Monitoring pauses when FakeNet.exe is detected
+- **Built For FlareVM** - Monitoring pauses when FakeNet.exe is detected
 
 ## 🔍 Network Blocking 
 
