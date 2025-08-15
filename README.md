@@ -124,3 +124,9 @@ Register-ScheduledTask -TaskName "NetLocker" -Action $action -Trigger $trigger -
 - Network blocking occurs as quickly as Python allows and can be manually overridden
 - Supports Windows 10 and 11 and requires admin rights
 - Python 3.7 or higher is required if running from source
+
+
+#### To Do
+
+- Add Restart/Refresh Mechanism
+- Add ability to whitelist/blacklist by ASN
