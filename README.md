@@ -128,5 +128,6 @@ Register-ScheduledTask -TaskName "NetLocker" -Action $action -Trigger $trigger -
 
 #### To Do
 
-- Add Restart/Refresh Mechanism
+- Add Restart/Refresh Mechanism, Fix Pause/Resume Button
+- Fix Ghosting/Phantom Tray Icons
 - Add ability to whitelist/blacklist by ASN
