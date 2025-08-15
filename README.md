@@ -5,7 +5,7 @@
 Python tool that monitors your computer's public IP and restricts network access when it detects the use of an unapproved, exposed, or non-VPN IP address. 
 <br>
 <br>
-Automatically disable network interfaces when your VPN is off or your IP is too exposed. Useful for malware analysis and minimizing unwanted connections to/from your personal IP address.
+Automatically disable network interfaces when your VPN is off or your IP is too exposed. Useful for malware analysis, minimizing unwanted connections, accidental IP leaks-- to/from your personal IP address.
 
 ## 🚀 Features
 - **Dynamic Network Control** - Automatically disables network adapters when an exposed IP is detected  
