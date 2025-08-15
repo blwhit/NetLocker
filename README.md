@@ -99,7 +99,7 @@ Create or edit `config.json` in the **same** directory as NetLocker:
 
 ## 🏃 Run Automatically (Recommended)
 
-To run NetLocker in the _background at login _(via Scheduled Task):
+To run NetLocker in the _background at login_ (via Scheduled Task):
 
 ```powershell
 # Navigate to NetLocker directory
